@@ -1,0 +1,45 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import '~antd/dist/antd.css';
+
+.flex {
+    display: flex;
+}
+
+button{
+    transition: all 0.3s ease;
+}
+
+button:focus {
+    outline: none;
+   box-shadow: inset 0 0 0 2.5px rgba(66, 153, 225, 0.5);
+}
+
+.fLtr-capatalize::first-letter{
+    text-transform: upperCase;
+}
+
+.ant-calendar-picker-input{
+    background: transparent;
+}
+
+.ant-calendar-range-picker-input, .ant-calendar-range-picker-separator, .ant-calendar-range-picker-input::placeholder {
+    color: #fff !important;
+}
+
+.anticon-close-circle{
+    display: none !important;    
+}
+
+.ant-calendar-picker-input {
+    border: none;
+}
+
+.no-hover:hover{
+    color: #f7f7f7;
+    background: initial;
+}
