@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addtodo } from "../redux/actions";
 import TodoList from "./todoList";
-import CompletedTodos from "./completedTodos";
-import TodoEditorPopup from "./todoEditorPopup";
 
 class AddTodos extends Component{
 
@@ -16,7 +14,7 @@ class AddTodos extends Component{
     }
 
     add_Todos(e) {
-       e.preventDefault();
+        e.preventDefault();
         const { value } = this.state;
         if (value.length > 0) {
             this.props.addtodo(this.state.value);
@@ -34,6 +32,8 @@ class AddTodos extends Component{
 
     render() {
         const { value } = this.state;
+
+        console.log('this.props.todos : ', this.props.todos );
 
         return (
             <div className="w-full mx-auto text-left">

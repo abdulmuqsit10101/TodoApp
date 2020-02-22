@@ -6,7 +6,6 @@ import {
     deleteCompletedTask
 } from "../redux/actions";
 
-
 const CompletedList = ({
     todos,
     undoCompleted,
@@ -14,8 +13,9 @@ const CompletedList = ({
     deleteCompletedTask
     }) => {
 
-    const UndoCompleted = (item) => {
+    const UndoCompleted = ( item) => {
         undoCompleted(item);
+        console.log('Item : ', item);
     }
 
     const Delete_CompletedTask = (id) => {
@@ -24,6 +24,7 @@ const CompletedList = ({
     }
 
     const { completed } = todos;
+    console.log('here are completed Todos ===> ', completed);
 
     return (
         <>
@@ -46,7 +47,7 @@ const CompletedList = ({
                                             <div className="flex">
                                             < button className = "py-4 px-5 bg-red-600 text-white"
                                             onClick = {
-                                                () => Delete_CompletedTask(item.id)
+                                                (e) => Delete_CompletedTask(e, item.id)
                                             } >
                                                 <img className="h-6 text-blue-400" alt="trash" src={require('../assets/trash.svg')} />
                                             </button>
@@ -57,7 +58,7 @@ const CompletedList = ({
                                 }
                         </ul>
                 </div>
-                <button onClick={emptyCompleted()} className="bg-red-600 mx-auto block mt-12 px-5 py-3 rounded-full mt-4 text-white outline-none">Empty Completed</button>
+                <button onClick={emptyCompleted} className="bg-red-600 mx-auto block mt-12 px-5 py-3 rounded-full mt-4 text-white outline-none">Empty Completed</button>
                     </>)
                     :
                     <div className="text-center text-gray-700">! No Task is Completed Yet</div>
