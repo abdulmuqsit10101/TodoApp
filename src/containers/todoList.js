@@ -45,6 +45,9 @@ class TodoList extends React.Component {
 
 
         render(){
+
+            console.warn('we are in todoList todos is this.props.todos : ');
+
             const { data } = this.props.todos;
             const { edit_popup, edit_input_data } = this.state;
             const {
@@ -54,7 +57,7 @@ class TodoList extends React.Component {
 
                 return (
                 <>
-                <h1 className="font-bold pt-10 pb-12 text-center text-3xl text-blue-600">Today Tasks</h1>
+                <h1 className="font-bold pt-10 pb-12 text-center text-3xl text-blue-600">Todos Tasks</h1>
                 {
                     data.length > 0 && data.sort(function (a, b) {
                         return a.id - b.id

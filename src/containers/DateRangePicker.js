@@ -6,8 +6,8 @@ import { DatePicker } from 'antd';
 
 // const dateFormat = 'YYYY/MM/DD';
 const { RangePicker } = DatePicker;
-const timeFormat = 'HH:mm:ss';
-const dateTimeFormat = 'HH:mm:ss';
+const timeFormat = 'YYYY/MM/DD';
+const dateTimeFormat = 'YYYY/MM/DD';
 
 
 
@@ -21,8 +21,8 @@ const DateRangePicker = ({
   }
   
   
-  const startTime = rangeValue.length !== 0 ? rangeValue[0] : "No Time";
-  const endTime = rangeValue.length !== 0 ? rangeValue[1] : "No Time";
+  const startTime = rangeValue && rangeValue.length !== 0 ? rangeValue[0] : "No Time";
+  const endTime = rangeValue && rangeValue.length !== 0 ? rangeValue[1] : "No Time";
 
   const check = startTime === "No Time" ? false : true;
   

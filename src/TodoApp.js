@@ -3,12 +3,12 @@ import React from "react";
 import { Switch, Route } from 'react-router-dom';
 
 
-//components
-import AddTodo from "./components/addTodo";
-import TodoList from "./components/todoList";
-import AllTasks from "./components/AllTasks";
-import Completed from "./components/completedTodos";
-import Header from "./components/header";
+//containers
+import AddTodo from "./containers/addTodo";
+import TodoList from "./containers/todoList";
+import AllTasks from "./containers/AllTasks";
+import Completed from "./containers/completedTodos";
+import Header from "./containers/header";
 
 
 
