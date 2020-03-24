@@ -32,9 +32,7 @@ class AddTodos extends Component{
 
     render() {
         const { value } = this.state;
-
         console.log('this.props.todos : ', this.props.todos );
-
         return (
             <div className="w-full mx-auto text-left">
             < form type = "post"
@@ -77,3 +75,4 @@ export default connect(
         addtodo
     }
 )(AddTodos);
+

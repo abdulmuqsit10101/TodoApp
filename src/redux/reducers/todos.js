@@ -24,10 +24,11 @@ export default function (state = initialState, action) {
             const {
                 inputValue
             } = action.payload;
+            ++state.nextId;
             return {
                 ...state,
                 data: [...state.data, {
-                    'id': ++state.nextId,
+                    'id': state.nextId,
                     'value': inputValue,
                     'time': []
                 }]

@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import { connect } from "react-redux";
-import DateRangePicker from "./DateRangePicker"
+// import DateRangePicker from "./DateRangePicker";
 import {
     moveToCompleted,
     clearAllTasks,
@@ -8,7 +9,7 @@ import {
     handleEditiedTask,
 } from "../redux/actions";
 import TodoEditorPopup from "./todoEditorPopup";
-
+import Picker from "../components/DateTimepicker/datePicker.js";
 
 class TodoList extends React.Component {
 
@@ -45,9 +46,6 @@ class TodoList extends React.Component {
 
 
         render(){
-
-            console.warn('we are in todoList todos is this.props.todos : ');
-
             const { data } = this.props.todos;
             const { edit_popup, edit_input_data } = this.state;
             const {
@@ -57,7 +55,8 @@ class TodoList extends React.Component {
 
                 return (
                 <>
-                <h1 className="font-bold pt-10 pb-12 text-center text-3xl text-blue-600">Todos Tasks</h1>
+                <h1 className="font-bold pt-10 pb-12 text-center text-3xl text-blue-600">Todos Tasks </h1>
+                <Picker />
                 {
                     data.length > 0 && data.sort(function (a, b) {
                         return a.id - b.id
@@ -76,9 +75,13 @@ class TodoList extends React.Component {
                                                     </div>
                                                     <div className="flex">
                                                         < div className = "flex items-center px-4 bg-gray-400 " >
-                                                            <span className="block mx-auto rounded-full h-6 w-6/7 bg-black relative overflow-hidden">
-                                                                <div className="bg-purple-600 w-1/2 h-full z-10 relative z-0"></div>
-                                                                <div className="center relative text-center text-sm text-white z-10 z-20 z-40" style={{ marginTop: "-28px"}}><DateRangePicker rangeValue={item.time} id={item.id} /></div>
+                                                            <span className="block mx-auto rounded-full h-6 w-6/7 bg-black relative">
+                                                                <div className="bg-purple-600 w-1/2 h-full z-10 absloute z-0 top-0 left-0 rounded-bl-full rounded-tl-full" ></div>
+                                                                <div className="center relative text-center text-sm z-10 z-20 z-40 flex px-2" style={{ marginTop: "-22px"}}>
+                                                                    <Picker className="w/1/2" />
+                                                                    <p className="text-white">~</p>
+                                                                    <Picker className="w/1/2" />
+                                                                </div>
                                                             </span>
                                                         </div>
                                                         <button onClick={() => {this.EditTask(item)}} className="py-4 px-5 bg-gray-300 text-white focus:">
@@ -94,7 +97,7 @@ class TodoList extends React.Component {
                                             ))
                                         }
                                 </ul>
-                                        <button onClick={() => this.props.clearAllTasks()} className="bg-red-600 mx-auto block mt-12 px-5 py-3 rounded-full mt-4 text-white outline-none">Delete All Task</button>
+                                <button onClick={() => this.props.clearAllTasks()} className="bg-red-600 mx-auto block mt-12 px-5 py-3 rounded-full mt-4 text-white outline-none">Delete All Task</button>
                             </div>
                             
                             )
@@ -122,3 +125,7 @@ const mapDispatchToProps = dispatch => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
+
+
+// <span className="block mx-auto rounded-full h-6 w-6/7 bg-black relative overflow-hidden">
