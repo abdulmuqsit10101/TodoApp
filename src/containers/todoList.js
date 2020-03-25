@@ -56,7 +56,6 @@ class TodoList extends React.Component {
                 return (
                 <>
                 <h1 className="font-bold pt-10 pb-12 text-center text-3xl text-blue-600">Todos Tasks </h1>
-                <Picker />
                 {
                     data.length > 0 && data.sort(function (a, b) {
                         return a.id - b.id
@@ -65,7 +64,7 @@ class TodoList extends React.Component {
                                 <ul>
                                     {
                                         data.map((item, index) => (
-                                                <li className="border-b border-white" key={index}>
+                                                <li className="border-b-2 border-white" key={index}>
                                                     <div className = "border-blue-600 border-l-8 bg-gray-300 flex justify-between">
                                                     <div className = "flex items-center border-left " > 
                                                     <span style={{minWidth: '85px'}} className = "mr-6 bg-black bg-blue-500 flex h-full inline-block items-center px-3 py-1 rounded-bl rounded-full rounded-tl text-white" > Task {
@@ -75,9 +74,9 @@ class TodoList extends React.Component {
                                                     </div>
                                                     <div className="flex">
                                                         < div className = "flex items-center px-4 bg-gray-400 " >
-                                                            <span className="block mx-auto rounded-full h-6 w-6/7 bg-black relative">
-                                                                <div className="bg-purple-600 w-1/2 h-full z-10 absloute z-0 top-0 left-0 rounded-bl-full rounded-tl-full" ></div>
-                                                                <div className="center relative text-center text-sm z-10 z-20 z-40 flex px-2" style={{ marginTop: "-22px"}}>
+                                                            <span className="block mx-auto rounded-full h-6 w-6/7 bg-black relative z-auto">
+                                                                <div className="bg-purple-600 w-1/2 h-full z-auto absloute top-0 left-0 rounded-bl-full rounded-tl-full" ></div>
+                                                                <div className="center relative text-center text-sm z-auto z-20 z-40 flex px-2" style={{ marginTop: "-22px"}}>
                                                                     <Picker className="w/1/2" />
                                                                     <p className="text-white">~</p>
                                                                     <Picker className="w/1/2" />
@@ -85,10 +84,10 @@ class TodoList extends React.Component {
                                                             </span>
                                                         </div>
                                                         <button onClick={() => {this.EditTask(item)}} className="py-4 px-5 bg-gray-300 text-white focus:">
-                                                            <img className="h-6 text-blue-400" alt="trash" src={require('../assets/edit.svg')} />
+                                                            <img className="h-6 text-blue-400 w-6" alt="trash" src={require('../assets/edit.svg')} />
                                                         </button>
                                                         <button onClick={() => this.DeleteTask(item.id)} className="py-4 px-5 bg-red-600 text-white focus:">
-                                                            <img className="h-6 text-blue-400" alt="trash" src={require('../assets/trash.svg')} />
+                                                            <img className="h-6 text-blue-400 w-6" alt="trash" src={require('../assets/trash.svg')} />
                                                         </button>
                                                             <button onClick={() => this.MovedToCompleted(item.id)} className="py-4 px-5 bg-green-500 text-white">Done</button>    
                                                     </div>

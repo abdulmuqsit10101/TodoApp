@@ -1,7 +1,7 @@
 
 .rdt {
     position: relative;
-    z-index: 111;
+    z-index: auto;
   }
   .rdtPicker {
     display: none;
@@ -13,7 +13,6 @@
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
     border: 1px solid #f9f9f9;
-    z-index: 111;
   }
   
   .rdtOpen .rdtPicker {
@@ -224,4 +223,7 @@
     color: #f7f7f7;
     background: transparent;
     outline: none;
+    position: relative;
+    display: block;
+    z-index: auto !important;
   }
