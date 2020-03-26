@@ -16,7 +16,7 @@ const App = () => {
             </BrowserRouter>
         </Provider>
     );
-}
+};
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

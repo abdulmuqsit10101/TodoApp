@@ -9,7 +9,8 @@
     width: 250px;
     padding: 4px;
     margin-top: 1px;
-    z-index: 99999 !important;
+    z-index: 10 !important;
+    color:#000;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
     border: 1px solid #f9f9f9;
@@ -218,12 +219,12 @@
 
 
   .form-control{
-    width: 150px;
-    text-align: center;
-    color: #f7f7f7;
+    text-align: inherit;
+    width: 100%;
     background: transparent;
     outline: none;
     position: relative;
+    font-size: inherit;
     display: block;
     z-index: auto !important;
   }

@@ -12,47 +12,49 @@ import {
 
 // var nextId = 0;
 
-export const addtodo = (value) => ({
+export const addtodo = (task, startDateTime, endDateTime) => ({
     type: TODO_ADDITION,
     payload: {
-        inputValue : value
+        task,
+        startDateTime,
+        endDateTime
     }
-})
+});
 
 export const moveToCompleted = val => ({
     type: TODO_COMPLETED,
     payload: {
         itemId: val
     }
-})
+});
 
 export const deleteTask = val => ({
     type: DELETE_TASK,
     payload: {
         taskId: val
     }
-})
+});
 
 export const deleteCompletedTask = id => ({
     type: DELETE_COMPLETED_TASK,
     payload: {
         completedTaskId: id
     }
-})
+});
 
-export const handleEditiedTask = task => ({
+export const handleEditiedTask = (editedItem) => ({
     type: REPLACE_EDITED_TASK,
     payload: {
-        editedTask: task
+        editedItem: editedItem
     }
-})
+});
 
 export const undoCompleted = itemData => ({
     type: UNDO_COMPLETED,
     payload: {
         undoItem: itemData
     }
-})
+});
 
 
 // TODO: Important to ask about this
@@ -60,12 +62,12 @@ export const undoCompleted = itemData => ({
 export const clearAllTasks = () => ({
     type: REMOVE_ALL_TASKS,
     payload: null,
-})
+});
 
 export const emptyCompleted = () => ({
     type: REMOVE_ALL_COMPLETED_TASKS,
     payload: null,
-})
+});
 
 export const handleDateAndTime = (time,id) => ({
     type: PICK_UP_TIME,

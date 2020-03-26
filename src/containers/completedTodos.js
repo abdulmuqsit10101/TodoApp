@@ -15,16 +15,13 @@ const CompletedList = ({
 
     const UndoCompleted = ( item) => {
         undoCompleted(item);
-        console.log('Item : ', item);
     }
 
     const Delete_CompletedTask = (id) => {
-        console.log('id : ', id);
         deleteCompletedTask(id);
     }
 
     const { completed } = todos;
-    console.log('here are completed Todos ===> ', completed);
 
     return (
         <>
@@ -41,9 +38,9 @@ const CompletedList = ({
                                     <li key={index} className="bg-gray-300 border-white border-b">
                                         <div className = "flex border-blue-600 border-l-8 justify-between" >
                                             <div className="flex items-center border-left">
-                                                <span className="mr-6 bg-black bg-blue-500 flex h-full inline-block items-center px-3 py-1 rounded-bl rounded-full rounded-tl text-white" style={{minWidth: "85px"}}>Task {item.id} </span> 
-                                                <p className="flex-1 fLtr-capatalize">{item.value}</p> 
-                                            </div> 
+                                                <span className="mr-6 bg-black bg-blue-500 flex h-full inline-block items-center px-3 py-1 rounded-bl rounded-full rounded-tl text-white" style={{minWidth: "85px"}}>Task {item.id} </span>
+                                                <p className="flex-1 fLtr-capatalize">{item.value}</p>
+                                            </div>
                                             <div className="flex">
                                             < button className = "py-4 px-5 bg-red-600 text-white"
                                             onClick = {

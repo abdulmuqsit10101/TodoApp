@@ -16,19 +16,18 @@ import Header from "./containers/header";
 
 
 function TodoApp(){
-
     return (
         <>
             <Header/>
-        <div className="py-4 px-5 container mt-10 mx-auto">
-            <Switch>
-                <Route exact path="/" component={AddTodo} />
-                <Route path="/all-tasks" component={AllTasks} />
-                <Route path="/completed" component={Completed} />
-            </Switch>
-        </div>
-            </>
+            <div className="py-4 px-5 container mt-10 mx-auto">
+                <Switch>
+                    <Route exact path="/" component={AddTodo} />
+                    <Route path="/all-tasks" component={AllTasks} />
+                    <Route path="/completed" component={Completed} />
+                </Switch>
+            </div>
+        </>
     );
 }
-    
+
 export default TodoApp;
